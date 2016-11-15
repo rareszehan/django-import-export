@@ -304,7 +304,7 @@ class ManyToManyWidget(Widget):
             ids = [int(value)]
         else:
             ids = value.split(self.separator)
-        ids = filter(None, value.split(self.separator))
+        ids = filter(None, ids)
         return self.model.objects.filter(**{
             '%s__in' % self.field: ids
         })
